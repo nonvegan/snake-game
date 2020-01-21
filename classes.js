@@ -49,10 +49,7 @@ class Snake {
         if (this.pos.distance(apple.pos) < 10) {
             apple.eaten()
             this.total++
-                if (this.total == 3) {
-                    playVideo()
-                }
-            new Audio('./sounds/appleBite.mp3').play()
+                new Audio('./sounds/appleBite.mp3').play()
             console.log(`Score: ${this.total}`);
 
         }
@@ -109,25 +106,4 @@ class Vector {
 
 function pickInsideGrid(size, max) {
     return size * Math.abs((Math.round(Math.floor(max / size) * Math.random()) - 1))
-}
-
-function playVideo() {
-    while (document.body.firstChild) {
-        document.body.removeChild(document.body.firstChild);
-    }
-    let video = document.createElement('video')
-    video.width = 1200
-    video.height = 800
-    let source = document.createElement('source')
-    source.src = "gnomed.mp4"
-    source.type = "video/mp4"
-    video.appendChild(source)
-    document.body.appendChild(video)
-    video.addEventListener('ended', myHandler)
-
-    function myHandler(e) {
-        location.replace("https://euw.op.gg/summoner/userName=nonvegancyclist")
-    }
-    snake.vel = new Vector(0, 0)
-    video.play()
 }

@@ -26,7 +26,7 @@ document.addEventListener('keydown', (key) => {
                         snake.vel.y = 0
                     }
                 } else {
-                    if (key.key === " ") {
+                    if (key.key === "Escape") {
                         snake.vel.x = 0
                         snake.vel.y = 0
                     }
