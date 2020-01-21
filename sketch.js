@@ -50,4 +50,4 @@ function update() {
 }
 setInterval(() => {
     update()
-}, getMs(20));
+}, getMs(15));
