@@ -7,7 +7,7 @@ body {
 
 canvas {
     margin: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 50px;
     display: block;
     background-color: #282c34;
@@ -18,9 +18,9 @@ canvas {
 
 }
 
-div {
+div,h1 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Consola";
     font-size: 2rem;
     color: #ae81ff
 }
