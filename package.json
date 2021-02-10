@@ -1,0 +1,23 @@
+{
+  "name": "snake-game",
+  "version": "1.0.0",
+  "description": "[WikiPedia](https://en.wikipedia.org/wiki/Snake_(video_game_genre))",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonvegan/snake-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nonvegan/snake-game/issues"
+  },
+  "homepage": "https://github.com/nonvegan/snake-game#readme",
+  "dependencies": {
+    "js-cookie": "^2.2.1"
+  }
+}

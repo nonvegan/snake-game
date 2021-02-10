@@ -49,20 +49,23 @@ class Snake {
         if (this.pos.distance(apple.pos) < 10) {
             apple.eaten()
             this.total++
-                new Audio('./sounds/appleBite.mp3').play()
-            console.log(`Score: ${this.total}`);
-
+            scoreDisplay.textContent = `Score: ${this.total}`;
         }
     }
     die() {
+        if (!Cookies.get('maxScore'))
+            Cookies.set('maxScore', this.total)
+        else if (this.total > Cookies.get('maxScore')) {
+            Cookies.set('maxScore', this.total)
+        }
+        maxScoreDisplay.textContent = `Max Score: ${Cookies.get('maxScore')}`
         this.total = 0
         this.tail = []
         this.pos = new Vector(width / 2, height / 2)
-        apple.eaten()
-        console.log("You died");
+        scoreDisplay.textContent = `Score: ${this.total}`;
+        apple.relocate()
+        new Audio('./sounds/metalHit.mp3')
     }
-
-
 }
 
 class Apple {
@@ -78,6 +81,10 @@ class Apple {
         ctx.strokeRect(this.pos.x, this.pos.y, this.size, this.size)
     }
     eaten() {
+        this.pos = new Vector(pickInsideGrid(this.size, width), pickInsideGrid(this.size, height))
+        new Audio('./sounds/appleBite.mp3').play()
+    }
+    relocate() {
         this.pos = new Vector(pickInsideGrid(this.size, width), pickInsideGrid(this.size, height))
     }
 }
