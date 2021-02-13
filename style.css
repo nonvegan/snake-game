@@ -1,8 +1,12 @@
-html,
 body {
     margin: 0;
     padding: 0;
     background-color: #21252b;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    allign-items: center;
 }
 
 canvas {
