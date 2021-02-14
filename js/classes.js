@@ -54,9 +54,9 @@ class Snake {
     }
     die() {
         if (!Cookies.get('maxScore'))
-            Cookies.set('maxScore', this.total)
+            Cookies.set('maxScore', this.total,{ expires: 365 })
         else if (this.total > Cookies.get('maxScore')) {
-            Cookies.set('maxScore', this.total)
+            Cookies.set('maxScore', this.total,{ expires: 365 })
         }
         maxScoreDisplay.textContent = `Max Score: ${Cookies.get('maxScore')}`
         this.total = 0

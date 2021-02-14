@@ -4,7 +4,7 @@ const maxScoreDisplay = document.getElementById('maxScore')
 const ctx = canvas.getContext('2d')
 
 if (!Cookies.get('maxScore'))
-    Cookies.set('maxScore', 0)
+    Cookies.set('maxScore', 0,{ expires: 365 })
 
 document.addEventListener('keydown', (key) => {
     if (key.key === "ArrowUp" && snake.vel.y != 1) {
